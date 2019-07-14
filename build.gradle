@@ -1,0 +1,30 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.6.RELEASE'
+	}
+    repositories {
+    	mavenLocal()
+    	mavenCentral()
+    }
+    dependencies {
+    	classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+    
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa:2.1.6.RELEASE")
+	testCompile group: 'com.h2database', name: 'h2', version: '1.4.199'
+	compile group: 'com.h2database', name: 'h2', version: '1.4.199'
+}
